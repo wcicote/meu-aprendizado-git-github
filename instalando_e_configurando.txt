@@ -1,0 +1,19 @@
+Instalação do Git
+
+O Git está presente no Mac e Linux, porém para verificar atualizações e Instalação siga a documentação do git:
+https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git
+
+No windowns faça o download do programa e instale:
+https://git-scm.com/download/win
+
+
+Configurando o Git:
+
+git config --global user.name "seu nome"
+git config --global user.email "<EMAIL>"
+
+Para listar as configurações do Git:
+
+git config -l
+
+
