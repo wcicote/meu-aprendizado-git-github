@@ -1,0 +1,31 @@
+Criando um repositório no GitHub.
+
+Primeiro, crie um conta no GitHub.
+
+Depois de criar sua conta e fazer login na plataforma.
+
+Agora procure o ícone com um sinal de mais (+) chamado “Create new…”.
+
+Defina um nome para seu novo repositório.
+
+Por enquanto, ignore as outras opções.
+
+Como seu repositório está vazio, o GitHub lhe dará algumas dicas.
+
+Apenas anote a URL exibida no campo HTTP ou a chave SSH caso preferir.
+
+Agora, temos um repositório no GitHub e iremos conectar a nossa 
+maquina:
+
+git clone https://github.com/<usuario>/<repositorio>.git
+ou 
+git clone git@github.com/<usuario>/<repositorio>.git
+
+Agora estamos conectados ao repositório Github e podemos comecar as alterações.
+
+Após as atualizações podemos sincronizar com o GitHub:
+
+git push origin master
+
+
+
