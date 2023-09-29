@@ -1,0 +1,97 @@
+Principais comandos Git
+
+Git clone
+
+Git clone é uma comando para baixar o código-fonte existente de um repositório remoto (como, por exemplo, o Github). Em outras palavras, git clone, basicamente, faz uma cópia idêntica da versão mais recente de um projeto em um repositório e a salva em seu computador.
+
+Há algumas maneiras de baixar o código-fonte, mas, em geral, eu prefiro a maneira de clonar com https:
+
+git clone <https://link-com-o-nome-do-repositório>
+
+Ou se tiver uma chave SSH:
+
+git clone git@github.com:<nome-do-criador/repositório>.git
+
+
+Git status
+
+O comando git status nos dá todas as informações necessárias sobre a branch atual.
+
+git status
+
+Obtemos as seguintes informações:
+
+Se a branch em que estamos no momento está atualizada
+Se precisamos fazer o commit, push ou pull de algo
+Se os arquivos estão em fase de stage, fora dessa fase ou se não estão sendo rastreados
+Se arquivos foram criados, modificados ou excluídos
+
+Git add
+Ao criarmos, modificarmos ou excluirmos um arquivo, essas alterações acontecerão em nosso espaço de trabalho local e não serão incluídas no próximo commit (a menos que alteremos as configurações).
+
+Precisamos usar o comando git add para incluir as alterações de um ou vários arquivos em nosso próximo commit.
+
+Para adicionar um único arquivo:
+
+git add <arquivo>
+
+Para adicionar tudo ao mesmo tempo:
+
+git add .
+
+Esses arquivos não serão incluídos em seus commits.
+
+
+Git commit
+
+Talvez esse seja o comando mais usado do Git. Quando chegamos a determinado ponto em desenvolvimento, queremos salvar nossas alterações (talvez após uma tarefa ou resolução de problema específica).
+
+Git commit é como definir um ponto de verificação no processo de desenvolvimento. Você pode voltar a esse ponto mais tarde, se necessário.
+
+Também precisamos escrever uma mensagem breve para explicar o que desenvolvemos ou alteramos no código-fonte.
+
+git commit -m "mensagem do commit"
+Importante: git commit salva suas alterações no espaço de trabalho local.
+
+Git push
+
+Após fazer o commit de suas alterações, a próxima coisa a fazer é enviar suas alterações ao servidor remoto. Git push faz o upload dos seus commits no repositório remoto.
+
+git push <repositório-remoto> <nome-da-branch>
+Entretanto, se a sua branch foi recém-criada, também é preciso fazer o upload da branch com o seguinte comando:
+
+git push --set-upstream <repositório-remoto> <nome-da-branch>
+ou
+
+git push origin <nome-da-branch>
+
+Importante: git push somente faz o upload das alterações que já estão em um commit.
+
+
+Git pull
+
+O comando git pull é usado para obter as atualizações de um repositório remoto. Esse comando é uma combinação de git fetch e git merge, o que significa que, quando usamos git pull, ele recebe as atualizações do repositório remoto (git fetch) e aplica imediatamente as alterações mais recentes em seu espaço de trabalho local (git merge).
+
+git pull <repositório-remoto>
+**git pull origin master**
+
+Essa operação pode causar conflitos que você precisará resolver manualmente.
+
+
+Git revert
+
+Às vezes, precisamos desfazer as alterações que fizemos. Existem várias maneiras de se desfazer as alterações em nosso espaço de trabalho local ou remotamente (dependendo do que você necessita), mas devemos usar esses comandos com cuidado para evitar exclusões indesejadas.
+
+Uma maneira segura de desfazer nossos commits é usando git revert. Para ver nosso histórico de commits, primeiro, precisamos usar git log -- oneline
+
+Em seguida, precisamos apenas especificar o código hash ao lado do commit que desejamos desfazer:
+
+git revert 3321844
+
+basta pressionar shift + q para sair
+
+O comando git revert desfará o commit especificado, mas criará outro commit sem excluir o antigo
+
+A vantagem de se usar git revert é não tocar no histórico de commits. Isso significa que você ainda pode ver todos os commits do seu histórico, mesmo os revertidos.
+
+Outra medida de segurança está no fato de que tudo acontece em nosso sistema local, a menos que façamos o push de tudo para o repositório remoto. É por isso que o uso de git revert é mais seguro e é a forma preferida de desfazer nossos commits.
