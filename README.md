@@ -1,1 +1,1 @@
-Meu Primeiro do curso Javascript full stack
+Meu Primeiro Projeto do curso Javascript full stack
